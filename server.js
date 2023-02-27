@@ -31,13 +31,13 @@ function employerOption() {
         }else if (answers.list ==="add Department"){
             addDepartment();
             
-        }else if (answer.list==="add Employees"){
+        }else if (answers.list==="add Employees"){
             addEmployee();
 
 
-        }else if (answer.list === "add role"){
+        }else if (answers.list === "add role"){
             allowedNodeEnvironmentFlags();
-        }else if (answer.list ==="quit"){
+        }else if (answers.list ==="quit"){
             db.end();
         }
         
@@ -71,7 +71,7 @@ function addrole(){
             {
                 name: "title",
                 type:"input",
-                message: "what is the title of the rol that you would like to add", 
+                message: "what is the title of the role that you would like to add", 
             },
             {
                 name:"salary",
