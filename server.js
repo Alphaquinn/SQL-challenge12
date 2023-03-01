@@ -9,7 +9,7 @@ function employerOption() {
         {
             type:"list",
             message: "Welcome, what would you like to do?",
-            name:"list",
+            name:"choice",
             choices:[
                 "view All Departments",
                 "view all roles",
@@ -21,6 +21,7 @@ function employerOption() {
             ],
         },
     ]).then((answers)=>{
+        console.log(answers);})
         if (answers.list==="view All Departments"){
             viewAllDepartments();
         }else if (answers.list==="view all roles"){
@@ -29,20 +30,20 @@ function employerOption() {
         }else if (answers.list==="view all employees"){
             viewAllEmployees();
         }else if (answers.list ==="add Department"){
-            addDepartment();
+         addDepartment();
             
-        }else if (answers.list==="add Employees"){
-            addEmployee();
+         }else if (answers.list==="add Employees"){
+             addEmployee();
 
 
-        }else if (answers.list === "add role"){
-            allowedNodeEnvironmentFlags();
-        }else if (answers.list ==="quit"){
-            db.end();
-        }
+         }else if (answers.list === "add role"){
+             allowedNodeEnvironmentFlags();
+         }else if (answers.list ==="quit"){
+             db.end();
+        }console.log(answers.choice);
         
     })
-}
+ }
 
 //addds a department
 function addDepartment(){
@@ -180,4 +181,4 @@ db.connect((err)=>{
     if (err) throw err;
     console.log("successfully connected");
 
-});
+});}
